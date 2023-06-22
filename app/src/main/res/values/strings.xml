@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Notepad-VSGA</string>
+    <string name="header_notes">Judul Catatan #1</string>
+    <string name="content_notes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in laoreet risus, id aliquet sapien. Sed imperdiet odio et neque suscipit aliquet. Cras pretium venenatis urna, sed vulputate metus accumsan quis. Etiam ac nisi sodales</string>
 </resources>
