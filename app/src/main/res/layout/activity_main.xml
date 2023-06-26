@@ -4,204 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_bg_blue"
-        android:layout_marginStart="85dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_bg_pink"
-        android:layout_marginEnd="90dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".MainActivity"
+    android:background="@drawable/main_bg">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="10dp">
+         android:id="@+id/top_navigation"
+         android:layout_width="match_parent"
+         android:layout_height="75dp"
+         android:gravity="center"
+         android:padding="10dp"
+         android:background="@color/transparent_bg">
 
         <ImageView
-            android:id="@+id/btn_menu_sidebar"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:src="@drawable/icn_menu" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_sidebar"
+            android:layout_marginEnd="20dp"/>
 
         <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:queryHint="Cari Catatan..."
-            android:background="@drawable/search_model"
-            android:iconifiedByDefault="false"/>
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/search_notes"
+            android:background="@drawable/custom_search_view" />
 
     </LinearLayout>
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       android:padding="10dp"
-       android:layout_marginTop="20dp">
+     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="600dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_navigation"
+        tools:listitem="@layout/notes_card" />
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical">
-
-           <androidx.cardview.widget.CardView
-               android:id="@+id/card_view_content"
-               android:layout_width="match_parent"
-               android:layout_height="220dp"
-               android:layout_marginTop="100dp"
-               app:cardUseCompatPadding="true">
-
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:orientation="vertical"
-                   android:padding="20dp"
-                   android:background="@drawable/bg_cardview">
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/header_notes"
-                       android:textSize="20sp"
-                       android:textStyle="bold"
-                       android:textColor="@color/black"/>
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/content_notes"
-                       android:textStyle="bold"
-                       android:layout_marginTop="10dp"
-                       android:textSize="12sp"
-                       android:textColor="@color/black" />
-
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:gravity="end"
-                       android:layout_marginTop="20dp">
-
-                       <Button
-                           android:layout_width="100dp"
-                           android:layout_height="35dp"
-                           android:layout_gravity="center"
-                           android:layout_marginEnd="10dp"
-                           android:text="Notes"
-                           android:background="@drawable/btn_date_info_background"/>
-
-                       <TextView
-                           android:layout_width="125dp"
-                           android:layout_height="35dp"
-                           android:text="19/05/2023"
-                           android:textColor="@color/white"
-                           android:gravity="center"
-                           android:textStyle="bold"
-                           android:background="@drawable/btn_date_info_background" />
-
-                   </LinearLayout>
-
-               </LinearLayout>
-
-           </androidx.cardview.widget.CardView>
-
-       </LinearLayout>
-
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical">
-
-           <androidx.cardview.widget.CardView
-               android:id="@+id/card_view_content2"
-               android:layout_width="match_parent"
-               android:layout_height="220dp"
-               android:layout_marginTop="30dp"
-               app:cardUseCompatPadding="true">
-
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:orientation="vertical"
-                   android:padding="20dp"
-                   android:background="@drawable/bg_cardview">
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/header_notes"
-                       android:textSize="20sp"
-                       android:textStyle="bold"
-                       android:textColor="@color/black"/>
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/content_notes"
-                       android:textStyle="bold"
-                       android:layout_marginTop="10dp"
-                       android:textSize="12sp"
-                       android:textColor="@color/black" />
-
-                   <LinearLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:gravity="end"
-                       android:layout_marginTop="20dp">
-
-                       <Button
-                           android:layout_width="100dp"
-                           android:layout_height="35dp"
-                           android:layout_gravity="center"
-                           android:layout_marginEnd="10dp"
-                           android:text="Notes"
-                           android:background="@drawable/btn_date_info_background"/>
-
-                       <TextView
-                           android:layout_width="125dp"
-                           android:layout_height="35dp"
-                           android:text="19/05/2023"
-                           android:textColor="@color/white"
-                           android:gravity="center"
-                           android:textStyle="bold"
-                           android:background="@drawable/btn_date_info_background" />
-
-                   </LinearLayout>
-
-               </LinearLayout>
-
-           </androidx.cardview.widget.CardView>
-
-       </LinearLayout>
-
-   </LinearLayout>
-
-    <LinearLayout
+      <LinearLayout
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:gravity="bottom">
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_vertical"
+        android:background="@drawable/custom_bg_bottom_navigation">
 
+        <LinearLayout
+            android:layout_width="125dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/custom_btn_todo_list">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/todo_icn"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Todo List"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="30dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

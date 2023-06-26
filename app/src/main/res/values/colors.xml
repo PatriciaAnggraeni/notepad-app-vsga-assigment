@@ -4,10 +4,10 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <!-- custom color -->
-    <color name="white_bg_with_opacity_70">#70FFFFFF</color>
-    <color name="blue_bg_btn_notes_info">#5B7FFE</color>
-    <color name="orange_bg_btn_todo_info">#FE965B</color>
-    <color name="purple_bg_btn_date_info">#FE5BEE</color>
+    <!--  my custom color  -->
+    <color name="transparent_bg">#70FFFFFF</color>
+    <color name="notes_info_color">#5B7FFE</color>
+    <color name="todo_info_color">#FE965B</color>
+    <color name="date_info_color">#FE5BEE</color>
 
 </resources>
